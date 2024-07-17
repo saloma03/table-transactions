@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../dist/output.css">
+</head>
+<body class="bg-main">
+    <div class="loading-layer absolute top-0 left-0 right-0 bottom-0 justify-center items-center bg-main z-30 hidden ">
+        <i class="fa-solid fa-spinner fa-spin fa-6x"></i>
+    </div>
+
+    <div class="p-5 w-10/12 mx-auto h-screen">
+        <h1 class="text-3xl mb-3 text-center font-bold text-header">Customers Transactions</h1>
+        <div class="search-bar flex justify-center py-3 pb-5 gap-8">
+            <div class="filter-customer w-1/2 relative">
+                <input type="text" id="filter-name" placeholder="Filter by customer name" class="focus:shadow-md focus:shadow-shadow w-full bg-main border-b-2 border-border outline-none">
+                <i  class="fa-solid fa-magnifying-glass absolute right-2"></i>
+            </div>
+            <div class="filter-transaction w-1/2 relative">
+                <input type="number" id="filter-amount" placeholder="Filter by transaction" class="focus:shadow-md focus:shadow-shadow w-full bg-main border-b-2 border-border outline-none">
+                <i class="fa-solid fa-filter absolute right-2"></i>
+            </div>
+        </div>
+
+        <div class="overflow-auto rounded-lg shadow mb-2">
+            <table class="w-full">
+                <thead class="bg-header text-headerText border-b-2 border-border">
+                    <tr>
+                        <th class="w-10 p-3 text-sm font-semibold tracking-wide text-left">No.</th>
+                        <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">Name</th>
+                        <th class="w-10 p-3 text-sm font-semibold tracking-wide text-left">Transaction ID</th>
+                        <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">Transaction Date</th>
+                        <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">Transactions Amount</th>
+                        <th class="w-20 p-3 text-sm font-semibold tracking-wide text-left">Total Transactions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body" class="row-data divide-y divide-gray-300">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="bg-main hidden chart pt-5">
+        <div id="chart-container" class="bg-main w-10/12 mx-auto pb-3">
+            <canvas id="myChart" class="w-full" ></canvas>
+        </div>
+    </div>
+    <div class="fixed bottom-10 right-10 p-5 hidden scroll-top">
+            <i class="fa-solid fa-arrow-up fa-beat text-money fa-4x cursor-pointer"></i>
+          
+    </div>
+    <script src="../node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/main.js" type='module'></script>
+</body>
+</html>
